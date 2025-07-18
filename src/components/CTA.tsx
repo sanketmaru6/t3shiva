@@ -3,14 +3,14 @@ import { motion } from 'framer-motion';
 
 const CTA = () => {
   return (
-    <section className="bg-gradient-to-r from-blue-50 via-white to-purple-50 py-24">
-      <div className="max-w-4xl mx-auto px-6 text-center">
+    <section className="cta-section">
+      <div className="cta-container">
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
           viewport={{ once: true }}
-          className="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6"
+          className="cta-title"
         >
           Ready To Launch Your Next Project?
         </motion.h2>
@@ -20,7 +20,7 @@ const CTA = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
           viewport={{ once: true }}
-          className="text-lg lg:text-xl text-gray-700 mb-10 max-w-2xl mx-auto"
+          className="cta-description"
         >
           With lots of unique blocks and components, you can easily build a beautiful page without touching code. Launch your next TYPO3 Headless website today.
         </motion.p>
@@ -32,11 +32,77 @@ const CTA = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.4, ease: 'easeOut' }}
           viewport={{ once: true }}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-md transition-all duration-300"
+          className="cta-button"
         >
           Get Started
         </motion.button>
       </div>
+
+      {/* Inline CSS */}
+      <style>{`
+        .cta-section {
+          background: linear-gradient(to right, #ebf4ff, #ffffff, #f3e8ff);
+          padding: 6rem 1.5rem;
+          text-align: center;
+        }
+
+        .cta-container {
+          max-width: 64rem;
+          margin: 0 auto;
+          padding: 0 1.5rem;
+        }
+
+        .cta-title {
+          font-size: 2.25rem;
+          line-height: 1.2;
+          font-weight: 800;
+          color: #1a202c;
+          margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 1024px) {
+          .cta-title {
+            font-size: 3rem;
+          }
+        }
+
+        .cta-description {
+          font-size: 1.125rem;
+          color: #4a5568;
+          margin-bottom: 2.5rem;
+          max-width: 40rem;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @media (min-width: 1024px) {
+          .cta-description {
+            font-size: 1.25rem;
+          }
+        }
+
+        .cta-button {
+          background-color: #2563eb;
+          color: white;
+          padding: 1rem 2.5rem;
+          border-radius: 0.75rem;
+          font-size: 1.125rem;
+          font-weight: 600;
+          box-shadow: 0 10px 15px rgba(37, 99, 235, 0.2);
+          transition: all 0.3s ease;
+          cursor: pointer;
+          border: none;
+        }
+
+        .cta-button:hover {
+          background-color: #1e40af;
+          box-shadow: 0 15px 25px rgba(37, 99, 235, 0.25);
+        }
+
+        .cta-button:active {
+          transform: scale(0.95);
+        }
+      `}</style>
     </section>
   );
 };

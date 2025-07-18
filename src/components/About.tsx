@@ -2,40 +2,105 @@ import React from 'react';
 
 const About = () => {
   return (
-    <section className="bg-gray-50 py-24">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <>
+      <style>{`
+        .about-section {
+          background-color: #f9fafb;
+          padding: 6rem 0;
+        }
+
+        .about-section .container {
+          max-width: 80rem;
+          margin: 0 auto;
+          padding: 0 1.5rem;
+          display: grid;
+          gap: 4rem;
+          align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+          .about-section .container {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        .left-content {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+
+        .tagline {
+          display: inline-block;
+          background-color: #dbeafe;
+          color: #2563eb;
+          padding: 0.5rem 1rem;
+          border-radius: 9999px;
+          font-size: 0.875rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+        }
+
+        .left-content h2 {
+          font-size: 2.25rem;
+          font-weight: 700;
+          color: #111827;
+          line-height: 1.25;
+        }
+
+        @media (min-width: 1024px) {
+          .left-content h2 {
+            font-size: 3rem;
+          }
+        }
+
+        .left-content p {
+          font-size: 1.25rem;
+          color: #4b5563;
+          line-height: 1.75;
+        }
+
+        .right-content .image-wrapper {
+          background-color: #cffafe;
+          padding: 2rem;
+          border-radius: 1rem;
+        }
+
+        .right-content img {
+          width: 100%;
+          height: 16rem;
+          object-fit: cover;
+          border-radius: 0.75rem;
+        }
+      `}</style>
+
+      <section className="about-section">
+        <div className="container">
           {/* Left content */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <div className="inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold uppercase tracking-wider">
-                Our Story
-              </div>
-              
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                We Know How Everything Works And Why Your Business Is Failing Over And Over Again.
-              </h2>
-            </div>
-            
-            <p className="text-xl text-gray-600 leading-relaxed">
+          <div className="left-content">
+            <div className="tagline">Our Story</div>
+            <h2>
+              We Know How Everything Works And Why Your Business Is Failing Over And Over Again.
+            </h2>
+            <p>
               We share common trends and strategies for improving your development workflow and making sure you stay ahead of the competition. 
               With lots of unique blocks, you can easily build a page without coding.
             </p>
           </div>
 
-          {/* Right content - Image */}
-          <div className="relative">
-            <div className="bg-cyan-100 rounded-2xl p-8">
+          {/* Right content */}
+          <div className="right-content">
+            <div className="image-wrapper">
               <img 
                 src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=500" 
-                alt="Team collaboration" 
-                className="w-full h-64 object-cover rounded-xl"
+                alt="Team collaboration"
               />
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
